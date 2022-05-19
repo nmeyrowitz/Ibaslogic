@@ -1,6 +1,6 @@
 ---
-title: "Working with React Form and Handling Event"
-description: "Form handling in React works a bit different compared to the regular HTML form. In this step-by-step guide, you will learn this in a simple way."
+title: "Working with React Form and Handling Events"
+description: "Form handling in React works a bit differently compared to a regular HTML form. In this step-by-step guide, you will learn this in a simple way."
 category: "React"
 datePublished: "2020-01-28 10:29:00"
 dateUpdated: "2021-01-04 10:32:00"
@@ -68,23 +68,23 @@ tags:
   ]}
 />
 
-Now, in this part, we will take a look at integrating form in our React app. Also, you will get to know how to raise and handle events in React.
+Now, in this part, we will take a look at integrating forms in our React app. Also, you will get to know how to raise and handle events in React.
 
-Though, we’ve covered [how to handle the form inputs fields](/simple-guide-to-react-form/ "react form") using the modern React Hooks. There, you will learn how the common input types such as checkbox, text, textarea, select input, radio and range work in React.
+In [React and Forms](/simple-guide-to-react-form/ "react form" ) we cover how to handle form input fields using modern React Hooks. There, you will learn how the common input types such as checkbox, text, textarea, select input, radio and range work in React.
 
-Until you’ve learned what these Hooks are in this series, you can bookmark the page for later read. But, if you have a basic knowledge of the Hooks, you can read to have prior knowledge of how the form works in React.
+Until you’ve learned what these Hooks are later in this series you can bookmark the link for later reading. But if you have a basic knowledge of the Hooks, you can read it now to have prior knowledge of how the form works in React.
 
 Let’s move on. Here is the current status of our app.
 
 ![React devtools](./images/react-devtools.png)
 
-And Now, let’s start by adding the checkboxes.
+Now, let’s start by adding the checkboxes.
 
 ## Adding checkboxes to the Todo items
 
-You should be familiar with handling this type of input field in the regular HTML form. In React, form handling works a little bit different.
+You should be familiar with handling this type of input field in a regular HTML form. In React, form handling works a little bit differently.
 
-So let's see how to.
+Let's see how.
 
 Open the `TodoItem.js` file and add the checkbox `input` just before the `title` in the `li` element.
 
@@ -98,7 +98,7 @@ return (
 
 Save the file and see the checkboxes in the frontend.
 
-By default, the `input` type (i.e checkboxes) are being handled by the DOM – i.e they have the default HTML behaviour. That is why you can toggle the boxes.
+By default, the `input` type (i.e checkboxes) are being handled by the DOM – i.e they have the default HTML behavior; that is why you can toggle the boxes.
 
 This type of input is called **uncontrolled input**. But this is not the case with React. The input fields are meant to be **controlled**. This takes us to another important subtopic.
 
@@ -106,7 +106,7 @@ This type of input is called **uncontrolled input**. But this is not the case wi
 
 To make the input field controllable, the input data (in this case, toggling of the checkbox) has to be handled by the component state and not the browser DOM. With this, the state will serve as a **Single Source of Truth**.
 
-Meaning, the input checkbox would no longer listens to its internal state (i.e the browser DOM) but the state in your app. This is necessary because the component state will not change unless you change it.
+This means the input checkbox will no longer listen to its internal state (i.e the browser DOM) but rather the state in your app. This is necessary because the component state will not change unless you change it.
 
 Let’s see how it works. If you take a look at the `state` object in the parent component, we have a Boolean value (`true` or `false`) assigned to every `completed` key in the `todos` data. We can tap into that to toggle the checkboxes.
 
@@ -228,7 +228,7 @@ This method is called `setState()`. It tells React that we are updating the stat
 
 Let’s apply the method.
 
-At the moment, if we click any of the checkboxes, we are receiving the clicked `id` in the `handleChange`. Now, for every toggle, the `TodoContainer` component will schedule a UI update by calling `setState()` with an object containing the current todos. Mind you, we will get the current todos by looping through the todos data and check if any of the items `id` matches the checked `id`. If it does, then we flip the completed value from `true` to `false` and vice versa.
+At the moment, if we click any of the checkboxes, we are receiving the clicked `id` in the `handleChange`. Now, for every toggle, the `TodoContainer` component will schedule a UI update by calling `setState()` with an object containing the current todos. We will get the current todos by looping through the todos data and check if any of the items `id` matches the checked `id`. If it does, then we flip the completed value from `true` to `false` and vice versa.
 
 Here is the code interpretation:
 
